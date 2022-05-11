@@ -1,0 +1,13 @@
+@import "./StylesConfigs/Mixins";
+@import "./Components/Header";
+@import "./Components/Form";
+
+@include breakpoint(375px){
+@include MobileHeader;
+@include formMobile;
+}
+
+@include breakpoint(810px){
+@include DesktopHeader;
+@include formDesktop;
+}

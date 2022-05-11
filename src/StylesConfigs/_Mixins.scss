@@ -1,0 +1,16 @@
+@mixin breakpoint($bpMin: 0) {
+  @media (min-width: $bpMin) {
+    @content;
+  }
+}
+
+@mixin cardColors($backgroundColor, $borderColor) {
+  background-color: $backgroundColor;
+  border-color: $borderColor;
+}
+
+@mixin hoverState($backgroundColor, $transitionTime){
+    background-color: $backgroundColor;
+    transition: $transitionTime;
+}
+

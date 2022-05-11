@@ -1,0 +1,38 @@
+@mixin FormInput{
+    .inputContainer {
+        height: 7rem;
+        display: flex;
+        margin-bottom: 2rem;
+        justify-content: space-around;
+        border-radius: 2rem;
+        border: 0.1rem solid lightgrey;
+        box-shadow: 14px -10px 24px -26px rgba(66, 68, 90, 1);
+        background-color: white;
+        width: 90%;
+        align-self: center;
+      }
+    
+      label {
+        align-self: center;
+        font-size: 2rem;
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+      }
+    
+      input {
+        width: 40%;
+        height: 3rem;
+        align-self: center;
+        border: 0.1rem solid lightgrey;
+        border-radius: 0.8rem;
+        box-shadow: inset -7px 6px 34px -30px rgba(66, 68, 90, 1);
+    
+        &:focus {
+          outline: none;
+          border: 0.1rem solid #cc62cc5e;
+        }
+      }
+
+}
+
+

@@ -1,0 +1,22 @@
+@mixin StarRating{
+    .starRating {
+        height: 9.5rem;
+        width: 90%;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 2rem;
+    
+        &-paragraph {
+          color: black;
+          font-size: 1.8rem;
+          margin: 0 auto;
+          color: white;
+          text-shadow: 0 0 0.5rem black;
+          font-weight: 700;
+          margin-bottom: 0.5rem;
+          text-align: center;
+        }
+      }
+}
