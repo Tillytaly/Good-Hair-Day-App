@@ -1,0 +1,51 @@
+@mixin MobileHeader {
+  header {
+    width: 100%;
+    justify-content: center;
+    height: 10.5rem;
+    padding: 1.5rem 0 0 1rem;
+  }
+
+  .logoContainer {
+    width: 12rem;
+    height: 100%;
+
+    &-logo {
+      color: #f0bfe5;
+      font-family: "Cinzel", serif;
+      font-size: 4em;
+      max-width: 100%;
+      height: 100%;
+      margin: 0;
+      text-align: left;
+      text-align-last: right;
+      line-height: 2.6rem;
+      z-index: -1;
+
+      &--neon {
+        color: white;
+        padding-left: 3rem;
+        text-align: center;
+        text-shadow: 0 0 7rem #f0bfe5, 0 0 1rem #f0bfe5, 0 0 2.1rem #f0bfe5,
+          0 0 4.2rem #dd6dc4, 0 0 8.2rem #dd6dc4, 0 0 9.2rem #dd6dc4,
+          0 0 10.2rem #dd6dc4, 0 0 15.1rem #dd6dc4;
+      }
+    }
+  }
+}
+
+@mixin DesktopHeader {
+  header {
+    height: 12.5rem;
+  }
+
+  .logoContainer {
+    width: 16rem;
+
+    &-logo {
+      font-size: 5em;
+      text-align-last: right;
+      line-height: 3.2rem;
+    }
+  }
+}
