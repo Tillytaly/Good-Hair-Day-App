@@ -35,17 +35,9 @@
     margin: 10% auto;
     min-width: 35rem;
     max-width: 45rem;
-    min-height: 48rem;
+    min-height: 40rem;
     -webkit-box-shadow: 21px -14px 15px -5px rgba(204, 98, 204, 0.37);
             box-shadow: 21px -14px 15px -5px rgba(204, 98, 204, 0.37);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .form {
-    width: 100%;
-    height: 100%;
-    padding: 0.5rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -54,20 +46,240 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .form .titleContainer {
-    padding-top: 0.5rem;
-    margin-bottom: 1rem;
-    width: 50%;
+  .dropdown {
+    min-height: 4.5rem;
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -ms-flex-item-align: center;
-        align-self: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .dropdown .menu-btn {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 8.5rem;
+    height: 6rem;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
   }
-  .form .titleContainer-title {
+  .dropdown .menu-btn.open {
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+  }
+  .dropdown .menu-btn__burger {
+    width: 3rem;
+    height: 0.4rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .dropdown .menu-btn__burger:hover, .dropdown .menu-btn__burger:hover::after, .dropdown .menu-btn__burger:hover::before {
+    background-color: #cc62cc5e;
+    -webkit-transition-duration: 0.7s;
+            transition-duration: 0.7s;
+  }
+  .dropdown .menu-btn__burger::before,
+  .dropdown .menu-btn__burger::after {
+    content: "";
+    position: absolute;
+    border-radius: 0.5rem;
+    width: 3rem;
+    height: 0.4rem;
+    background-color: white;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+  .dropdown .menu-btn__burger::before {
+    -webkit-transform: translateY(-0.8rem);
+            transform: translateY(-0.8rem);
+  }
+  .dropdown .menu-btn__burger::after {
+    -webkit-transform: translateY(0.8rem);
+            transform: translateY(0.8rem);
+  }
+  .dropdown .menu-btn.open .menu-btn__burger {
+    -webkit-transform: translateY(-70%);
+            transform: translateY(-70%);
+    background-color: transparent;
+  }
+  .dropdown .menu-btn.open .menu-btn__burger::before {
+    -webkit-transition-duration: 0.7s;
+            transition-duration: 0.7s;
+    background-color: #90a3d3;
+    -webkit-transform: rotate(45deg) translate(0.1rem, 0.1rem);
+            transform: rotate(45deg) translate(0.1rem, 0.1rem);
+  }
+  .dropdown .menu-btn.open .menu-btn__burger::after {
+    -webkit-transition-duration: 0.7s;
+            transition-duration: 0.7s;
+    background-color: #90a3d3;
+    -webkit-transform: rotate(-45deg) translate(-0.1rem, 0.1rem);
+            transform: rotate(-45deg) translate(-0.1rem, 0.1rem);
+  }
+  .dropdown .dropdown-content {
+    width: 95%;
+    height: 32.5rem;
+    background-color: white;
+    position: absolute;
+    margin-top: 6rem;
+    padding: 1rem;
+    z-index: 1;
+    border-radius: 2rem;
+    border: 0.1rem solid #90a3d3;
+    display: none;
+  }
+  .dropdown .dropdown-content.open {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: (1fr)[4];
+        grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0.2rem;
+    justify-items: right;
+  }
+  .dropdown .checkboxContainer {
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    border-bottom: 0.2rem solid #f3efef;
+  }
+  .dropdown .checkboxContainer:hover {
+    -webkit-transition: 0s;
+    transition: 0s;
+    border-bottom: 0.2 solid #a19191;
+  }
+  .dropdown .checkboxContainer label {
+    font-size: 1.7em;
+    letter-spacing: 0.01em;
+    min-width: 85%;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .dropdown .checkboxContainer input {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+  }
+  .dropdown .checkboxContainer label::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    border: 0.05em solid #90a3d3;
+    margin-right: 0.5rem;
+  }
+  .dropdown .checkboxContainer label:hover::before,
+  .dropdown .checkboxContainer input:hover + label::before {
+    background-color: #BFCDF0;
+    -webkit-transition-duration: 0.9s;
+            transition-duration: 0.9s;
+  }
+  .dropdown .checkboxContainer input:checked + label::before {
+    content: "\002714";
+    background-color: #90a3d3;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: white;
+    -webkit-transition-duration: 0s;
+            transition-duration: 0s;
+    -webkit-box-shadow: 0 0 20px #90a3d3;
+            box-shadow: 0 0 20px #90a3d3;
+  }
+  .dropdown .checkboxContainer input:focus + label::before {
+    -webkit-box-shadow: 0 0 20px #90a3d3;
+            box-shadow: 0 0 20px #90a3d3;
+  }
+  .dropdown .checkboxContainer input:checked + label {
+    font-weight: 500;
+  }
+  .dropdown .dropdown-button {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+    background-color: #BFCDF0;
+    border-color: #90a3d3;
+    width: 12rem;
+    height: 4rem;
+    margin-right: 0;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    letter-spacing: 0.2rem;
+    font-weight: 800;
+    text-shadow: 0 0 0.5rem black;
+    color: white;
+    font-size: 1.7rem;
+  }
+  .dropdown .dropdown-button:hover {
+    background-color: #A8B6DA;
+    -webkit-transition-duration: 0.9s;
+            transition-duration: 0.9s;
+  }
+  .form {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .form-titleContainer {
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .form-titleContainer__title {
+    display: inline-block;
+    margin: 0 auto 0.5rem auto;
     font-size: 2.5rem;
     color: white;
     text-shadow: 0 0 0.5rem black;

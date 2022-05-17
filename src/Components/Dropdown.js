@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import DropdownContent from "./DropdownContent";
 const Dropdown = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -18,7 +19,7 @@ const Dropdown = (props) => {
       >
         <div className="menu-btn__burger"></div>
       </div>
-      <div className="dropdown-content"></div>
+      <DropdownContent menuState={menuOpen}/>
     </div>
   );
 };

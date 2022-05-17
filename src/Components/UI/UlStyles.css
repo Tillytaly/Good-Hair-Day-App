@@ -11,5 +11,6 @@
   border: 0.2rem solid;
   border-right: 0.4rem solid;
   border-top: 0.4rem solid;
+  cursor: pointer;
   margin-right: 2rem;
 }

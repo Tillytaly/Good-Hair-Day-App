@@ -1,0 +1,107 @@
+@import "../StylesConfigs/Variables";
+@mixin DropdownContent {
+  .dropdown-content {
+    width: 95%;
+    height: 32.5rem;
+    background-color: white;
+    position: absolute;
+    margin-top: 6rem;
+    padding: 1rem;
+    z-index: 1;
+    border-radius: 2rem;
+    border: 0.1rem solid $blue;
+    display: none;
+    
+  }
+
+  .dropdown-content.open {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0.2rem;
+    
+    justify-items: right;
+  }
+
+  .checkboxContainer {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 0.2rem solid rgb(243, 239, 239);
+
+    &:hover {
+      transition: 0s;
+      border-bottom: 0.2 solid rgb(161, 145, 145);
+    }
+  }
+
+  .checkboxContainer label {
+    font-size: 1.7em;
+    letter-spacing: 0.01em;
+    min-width: 85%;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .checkboxContainer input {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+  }
+
+  .checkboxContainer label::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    border: 0.05em solid $blue;
+    margin-right: 0.5rem;
+  }
+
+  .checkboxContainer label:hover::before,
+  .checkboxContainer input:hover + label::before {
+    background-color: $lightBlue;
+    transition-duration: 0.9s;
+  }
+
+  .checkboxContainer input:checked + label::before {
+    content: "\002714";
+    background-color: $blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition-duration: 0s;
+    box-shadow: 0 0 20px $blue;
+  }
+  .checkboxContainer input:focus + label::before {
+    box-shadow: 0 0 20px $blue;
+  }
+
+  .checkboxContainer input:checked + label {
+    font-weight: 500;
+  }
+
+  .dropdown-button {
+    grid-column-start: 2;
+    @include cardColors($lightBlue, $blue);
+    width: 12rem;
+    height: 4rem;
+    margin-right: 0;
+    align-self: flex-end;
+    letter-spacing: 0.2rem;
+    font-weight: 800;
+    text-shadow: 0 0 0.5rem black;
+    color: white;
+    font-size: 1.7rem;
+  
+
+    &:hover{
+      background-color: $greyishBlue;
+      transition-duration: 0.9s;
+
+    }
+  }
+}

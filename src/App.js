@@ -1,7 +1,8 @@
 
-import Header from "./Components/Header";
+import Header from "./Components/Header/Header";
 import FormCard from "./Components/FormCard";
 import './App.css'
+
 
 function App() {
   return (
