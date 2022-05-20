@@ -1,13 +1,21 @@
-import React from "react";
-import { v4 as uuidv4 } from "uuid";
-const Checkbox = (props) => {
-  const checkboxID = uuidv4();
+import React, {useState} from "react";
 
+const Checkbox = (props) => {
+  const [checkboxChecked, setCheckboxChecked] = useState(true);
+
+const checkboxClickHandler = (event) => {
+if(checkboxChecked){
+  props.onAddValue(event.target.value)
+}else{
+  props.onRemoveValue(event.target.value)
+}
+setCheckboxChecked(!checkboxChecked)
+}
 
   return (
     <div className="checkbox-container">
-      <input type="checkbox" id={checkboxID}></input>
-      <label htmlFor={checkboxID}>{props.hairTreatment}</label>
+      <input type="checkbox" id={props.id} value={props.name} onChange={checkboxClickHandler}></input>
+      <label htmlFor={props.id}>{props.name}</label>
     </div>
   );
 };

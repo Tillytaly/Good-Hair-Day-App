@@ -3,14 +3,10 @@ const BurgerButton = (props) => {
   const [btnOpen, setBtnOpen] = useState(false);
 
   const menuBtnHandler = () => {
-    if (!btnOpen) {
-      setBtnOpen(true);
-      props.newMenuState(true);
-    } else {
-      setBtnOpen(false);
-      props.newMenuState(false);
+      setBtnOpen(!btnOpen);
+      props.newMenuState(!btnOpen);
     }
-  };
+
 
   return (
     <div className={`btn ${btnOpen ? "open" : ""}`} onClick={menuBtnHandler}>
@@ -18,5 +14,6 @@ const BurgerButton = (props) => {
     </div>
   );
 };
+
 
 export default BurgerButton;
