@@ -4,9 +4,8 @@ const BurgerButton = (props) => {
 
   const menuBtnHandler = () => {
       setBtnOpen(!btnOpen);
-      props.newMenuState(!btnOpen);
     }
-
+    props.newMenuState(btnOpen);
 
   return (
     <div className={`btn ${btnOpen ? "open" : ""}`} onClick={menuBtnHandler}>

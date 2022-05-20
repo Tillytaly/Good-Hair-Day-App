@@ -1,7 +1,7 @@
 const FormInput = (props) => {
     return (
       <div className ="form--input-container">
-        <label>Treatment</label>
+        <label>{props.inputTitle}</label>
         <input type={props.inputType ? props.inputType : "text"} required></input>
       </div>
     );

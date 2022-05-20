@@ -12,13 +12,13 @@ const HAIR_DAY_OPTIONS = [
 ];
 
 const CheckboxForm = (props) => {
-  const [chexboxValues, setCheckboxValues] = useState([]);
+  const [checkboxValues, setCheckboxValues] = useState([]);
 
   const removeCheckboxValue = (checkboxValue) => {
     setCheckboxValues((prevValues) => {
-       return prevValues.filter(prevValue => prevValue !== checkboxValue)
-    })
-  }
+      return prevValues.filter((prevValue) => prevValue !== checkboxValue);
+    });
+  };
 
   const addCheckboxValue = (checkboxValue) => {
     setCheckboxValues((prevValues) => {
@@ -28,7 +28,7 @@ const CheckboxForm = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log(chexboxValues);
+   props.onChangeFormInputs(checkboxValues)
   };
 
   return (
