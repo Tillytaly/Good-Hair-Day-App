@@ -1,10 +1,11 @@
 import React from "react";
+import styles from "../../Sass/layout/Header.module.scss"
 const Header = () => {
   return (
-    <header>
-      <div className="logoContainer">
-      <h1 className="logoContainer-logo">
-        Good <span className="logoContainer-logo--neon">Hair </span>
+    <header className= {styles.header}>
+      <div className={styles.logoContainer}>
+      <h1 className={styles.logo}>
+        Good <span className={styles.neon}>Hair </span>
          Day
       </h1>
       </div>

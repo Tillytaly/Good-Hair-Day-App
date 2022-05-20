@@ -1,0 +1,39 @@
+@use '../../abstracts/Variables' as *;
+@use '../../abstracts/Mixins' as *;
+
+@include breakpoint(375px){
+  .form--input-container {
+    height: 7rem;
+    display: flex;
+    margin-bottom: 2rem;
+    justify-content: space-around;
+    border-radius: 2rem;
+    border: 0.1rem solid $formInputBorder;
+    box-shadow: 14px -10px 24px -26px $formInputBoxShadow;
+    background-color: white;
+    width: 90%;
+    align-self: center;
+  
+    label {
+      align-self: center;
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 0.1rem;
+    }
+    
+    input {
+      width: 40%;
+      height: 3rem;
+      align-self: center;
+      border: 0.1rem solid $formInputBorder;
+      border-radius: 0.8rem;
+      box-shadow: inset -7px 6px 34px -30px $formInputBoxShadow;
+    
+      &:focus {
+        outline: none;
+        border: 0.1rem solid $darkerPink;
+      }
+    }
+  }
+}
+

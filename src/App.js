@@ -1,14 +1,13 @@
-
 import Header from "./Components/Header/Header";
-import FormCard from "./Components/FormCard";
-import './App.css'
+import NewHairDayCard from "./Components/NewHairDay/NewHairDayCard"
+
 
 
 function App() {
   return (
 <>
 <Header/>
-<FormCard/>
+<NewHairDayCard/>
 </>
   );
 }
