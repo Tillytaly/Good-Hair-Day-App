@@ -8,17 +8,17 @@ const PopupMenu = (props) => {
     return setMenuOpen(menuState);
   };
 
-  const checkboxValuesHandler = (checkboxValues) => {
+  const checkboxDataHandler = (checkboxValues) => {
     props.onChangeFormInputs(checkboxValues)
     setMenuOpen(false);
   };
 
   return (
     <div className="popup-menu">
-      <BurgerButton newMenuState={menuStateHandler} />
+      <BurgerButton newMenuState={menuStateHandler} menuState={menuOpen}/>
       <CheckboxForm
-        onButtonClick={menuOpen}
-        onChangeFormInputs={checkboxValuesHandler}
+        menuState={menuOpen}
+        onNewHairDayOptions={checkboxDataHandler}
       />
     </div>
   );
