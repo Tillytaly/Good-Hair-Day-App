@@ -1,14 +1,19 @@
 import StarRating from "./StarRating";
 import FormInput from "./FormInput";
 import FormFooter from "./FormFooter";
-import { v4 as uuidv4 } from "uuid";
 const Form = (props) => {
   return (
     <>
       <form className="form">
-        {props.formData.map((data) => <FormInput inputTitle={data} key={uuidv4()}/>)}
-        <StarRating/>
-       <FormFooter/>
+        {props.formData.map((checkboxDataObj) => (
+          <FormInput
+            inputLabel={checkboxDataObj.name}
+            key={checkboxDataObj.id}
+            inputType={checkboxDataObj.type}
+          />
+        ))}
+        <StarRating />
+        <FormFooter />
       </form>
     </>
   );

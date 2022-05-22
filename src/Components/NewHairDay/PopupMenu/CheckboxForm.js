@@ -8,32 +8,34 @@ const HAIR_DAY_OPTIONS = [
   { name: "PEH", id: uuidv4() },
   { name: "Serum", id: uuidv4() },
   { name: "Hair Oil", id: uuidv4() },
-  { name: "Date", id: uuidv4() },
+  { name: "Date", id: uuidv4(), title: "If not chosen today's date is default."},
 ];
 
 const CheckboxForm = (props) => {
-  const [checkboxValues, setCheckboxValues] = useState([]);
+  const [checkboxDataList, setCheckboxDataList] = useState([]);
+  const [formState, setFormState] = useState(false);
 
-  const removeCheckboxValue = (checkboxValue) => {
-    setCheckboxValues((prevValues) => {
-      return prevValues.filter((prevValue) => prevValue !== checkboxValue);
+  const removeCheckboxValue = (checkboxId) => {
+    setCheckboxDataList((prevValues) => {
+      return prevValues.filter(({ id }) => id !== checkboxId);
     });
   };
 
-  const addCheckboxValue = (checkboxValue) => {
-    setCheckboxValues((prevValues) => {
-      return [checkboxValue, ...prevValues];
+  const addCheckboxValue = (checkboxData) => {
+    setCheckboxDataList((prevValues) => {
+      return [checkboxData, ...prevValues];
     });
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
-   props.onChangeFormInputs(checkboxValues)
+    props.onNewHairDayOptions(checkboxDataList);
+    setFormState(!formState);
   };
 
   return (
     <form
-      className={`checkbox-form ${props.onButtonClick ? "open" : ""}`}
+      className={`checkbox-form ${props.menuState ? "open" : ""}`}
       onSubmit={submitHandler}
     >
       <p className="checkbox-form--title">Hair Day Options</p>

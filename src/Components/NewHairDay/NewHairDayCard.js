@@ -1,20 +1,20 @@
 import Form from "./Form";
 import PopupMenu from "./PopupMenu/PopupMenu";
 import React, {useState} from "react";
-
 import Card from "../UI/Card";
+
 const NewHairDayCard = () => {
-const [inputNames, setInputNames] = useState([]) 
+const [inputData, setInputData] = useState([]) 
 
-const inputNameHandler = (checkboxValues) =>{
+const inputNameHandler = (checkboxData) =>{
 
-setInputNames(checkboxValues);
+setInputData(checkboxData);
 }
 
   return (
     <Card className="new-day-card">
       <PopupMenu onChangeFormInputs ={inputNameHandler}/>
-      <Form formData = {inputNames}/>
+      <Form formData = {inputData}/>
     </Card>
   );
 };
