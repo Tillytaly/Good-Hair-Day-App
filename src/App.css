@@ -34,22 +34,40 @@ body {
 }
 
 @media (min-width: 375px) {
-  .new-day-card {
+  .new-hair-day {
     background-color: #ebd7e6;
     border-color: rgba(204, 98, 204, 0.368627451);
     margin: 10% auto;
-    min-width: 35rem;
-    max-width: 55rem;
-    min-height: 36rem;
+    min-height: 9rem;
+    max-width: 70rem;
+    padding: 1rem;
     box-shadow: 21px -14px 15px -5px rgba(204, 98, 204, 0.37);
     display: flex;
-    flex-direction: column;
-    padding: 1rem;
+    justify-content: center;
+  }
+  .new-hair-day--btn {
+    font-size: 1.7rem;
+    padding: 1rem 2rem;
+    background-color: rgba(204, 98, 204, 0.368627451);
+    border-color: rgba(204, 98, 204, 0.368627451);
+    font-weight: 800;
+    text-shadow: 0 0 0.5rem black;
+    color: white;
+    width: 80%;
   }
 }
 @media (min-width: 810px) {
-  .new-day-card {
+  .new-hair-day {
     min-width: 55rem;
+  }
+  .new-hair-day--btn {
+    width: auto;
+  }
+}
+@media (min-width: 375px) {
+  .new-day-card {
+    min-height: 36rem;
+    width: 100%;
   }
 }
 @media (min-width: 375px) {
@@ -123,8 +141,8 @@ body {
 }
 @media (min-width: 375px) {
   .checkbox-form {
-    width: 95%;
-    height: 28rem;
+    width: 98%;
+    height: 30rem;
     position: absolute;
     margin-top: 4rem;
     padding: 1rem;
@@ -162,6 +180,8 @@ body {
     width: 12rem;
     height: 4rem;
     margin-right: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     align-self: flex-end;
     letter-spacing: 0.2rem;
     font-weight: 800;
@@ -283,6 +303,7 @@ body {
   align-items: center;
   flex-direction: column;
   margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 .star-rating--paragraph {
   color: black;
@@ -304,6 +325,7 @@ body {
   .form-footer--button {
     width: 12rem;
     height: 4rem;
+    margin-bottom: 2rem;
     font-size: 1.7rem;
     color: white;
     letter-spacing: 0.2rem;

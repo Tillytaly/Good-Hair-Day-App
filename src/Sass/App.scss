@@ -1,5 +1,6 @@
 @use "./base/CSSReset";
 @use"./UI/UlStyles";
+@use "./components/NewHairDay/NewHairDay";
 @use "./components/NewHairDay/NewHairDayCard";
 @use "./components/NewHairDay/PopupMenu/PopupMenu.scss";
 @use "./components/NewHairDay/PopupMenu/BurgerButton";

@@ -1,0 +1,39 @@
+@use "../../abstracts/Mixins" as *;
+@use "../../abstracts/Variables" as *;
+
+@include breakpoint(375px){
+.new-hair-day {
+  @include cardColors($lightestPink, $darkerPink);
+  margin: 10% auto;
+min-height:9rem;
+  max-width: 70rem;
+  padding: 1rem;
+  box-shadow: 21px -14px 15px -5px rgba(204, 98, 204, 0.37);
+  display: flex;
+  justify-content: center;
+
+  &--btn{
+    font-size: 1.7rem;
+    padding: 1rem 2rem;
+    @include cardColors($darkerPink, $darkerPink);
+    font-weight: 800;
+    text-shadow: 0 0 0.5rem black;
+    color: white;
+    width:80%;
+}
+}
+
+
+}
+
+@include breakpoint(810px) {
+    .new-hair-day {
+      min-width: 55rem;
+
+      &--btn{
+          width:auto;
+      }
+
+    }
+  }
+  

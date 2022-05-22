@@ -13,7 +13,7 @@ const Form = (props) => {
           />
         ))}
         <StarRating />
-        <FormFooter />
+        <FormFooter onCancel ={props.onNewHairDayCancel}/>
       </form>
     </>
   );

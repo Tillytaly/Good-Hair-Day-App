@@ -1,13 +1,12 @@
 import Header from "./Components/Header/Header";
-import NewHairDayCard from "./Components/NewHairDay/NewHairDayCard"
-
+import NewHairDay from "./Components/NewHairDay/NewHairDay";
 
 
 function App() {
   return (
 <>
 <Header/>
-<NewHairDayCard/>
+<NewHairDay/>
 </>
   );
 }
