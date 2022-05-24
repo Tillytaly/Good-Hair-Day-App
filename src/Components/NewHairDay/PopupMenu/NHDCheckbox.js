@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Checkbox = (props) => {
+const NHDCheckbox = (props) => {
   const [checkboxChecked, setCheckboxChecked] = useState(true);
 
   const checkboxClickHandler = (event) => {
@@ -31,4 +31,4 @@ const Checkbox = (props) => {
   );
 };
 
-export default Checkbox;
+export default NHDCheckbox;

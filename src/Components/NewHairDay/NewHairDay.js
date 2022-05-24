@@ -1,7 +1,7 @@
-import Card from "../UI/Card";
+import UICard from "../UI/UICard";
 import React, { useState } from "react";
-import Button from "../UI/Button";
-import NewHairDayCard from "./NewHairDayCard";
+import UIButton from "../UI/UIButton";
+import NHDCard from "./NHDCard";
 
 const NewHairDay = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -11,14 +11,14 @@ const NewHairDay = () => {
   };
 
   return (
-    <Card className="new-hair-day">
+    <UICard className="new-hair-day">
       {!isEditing && (
-        <Button onClick={editingHandler} className="new-hair-day--btn">
+        <UIButton onClick={editingHandler} className="new-hair-day--btn">
           Add New Hair Day
-        </Button>
+        </UIButton>
       )}
-      {isEditing && <NewHairDayCard  onCancelNewHairDay = {editingHandler}/>}
-    </Card>
+      {isEditing && <NHDCard onCancelNewHairDay={editingHandler} />}
+    </UICard>
   );
 };
 

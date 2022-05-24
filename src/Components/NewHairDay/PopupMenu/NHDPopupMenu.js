@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import CheckboxForm from "./CheckboxForm";
-import BurgerButton from "./BurgerButton";
-const PopupMenu = (props) => {
+import CheckboxForm from "./NHDCheckboxForm";
+import NHDBurgerButton from "./NHDBurgerButton";
+const NHDPopupMenu = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const menuStateHandler = () => {
-   setMenuOpen(!menuOpen);
+    setMenuOpen(!menuOpen);
   };
 
   const checkboxDataHandler = (checkboxValues) => {
-    props.onChangeFormInputs(checkboxValues)
+    props.onChangeFormInputs(checkboxValues);
   };
 
   return (
     <div className="popup-menu">
-      <BurgerButton menuState={menuOpen}  newMenuState={menuStateHandler} />
+      <NHDBurgerButton menuState={menuOpen} newMenuState={menuStateHandler} />
       <CheckboxForm
         menuState={menuOpen}
         newMenuState={menuStateHandler}
@@ -24,4 +24,4 @@ const PopupMenu = (props) => {
   );
 };
 
-export default PopupMenu;
+export default NHDPopupMenu;

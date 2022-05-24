@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Rating } from "react-simple-star-rating";
 
 const StarRating = (props) => {
@@ -9,7 +9,8 @@ const StarRating = (props) => {
         onClick={props.onClickRating}
         ratingValue={props.value}
         allowHalfIcon={true}
-        size={props.starRatingSize}
+        size={props.starSize}
+        readonly={props.readonly}
       />
     </div>
   );

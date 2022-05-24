@@ -1,8 +1,8 @@
 import StarRating from "./StarRating";
-import FormInput from "./FormInput";
-import FormFooter from "./FormFooter";
+import NHDFormInput from "./NHDFormInput";
+import NHDFormFooter from "./NHDFormFooter";
 import React, { useState } from "react";
-const Form = (props) => {
+const NHDForm = (props) => {
   const [inputDataList, setInputDataList] = useState([]);
   const [rating, setRating] = useState(0);
 
@@ -40,7 +40,7 @@ const Form = (props) => {
     <>
       <form className="form" onSubmit={submitHandler}>
         {props.formData.map((checkboxDataObj) => (
-          <FormInput
+          <NHDFormInput
             inputLabel={checkboxDataObj.name}
             key={checkboxDataObj.id}
             inputType={checkboxDataObj.type}
@@ -51,12 +51,13 @@ const Form = (props) => {
         <StarRating
           onClickRating={starRatingHandler}
           value={rating}
-          starRatingSize={50}
+          starSize={50}
+          readonly = {false}
         />
-        <FormFooter onCancel={props.onNewHairDayCancel} />
+        <NHDFormFooter onCancel={props.onNewHairDayCancel} />
       </form>
     </>
   );
 };
 
-export default Form;
+export default NHDForm;
