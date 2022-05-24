@@ -1,20 +1,20 @@
 import NHDForm from "./NHDForm";
-import NHDPopupMenu from "./PopupMenu/NHDPopupMenu";
+import NHDHeader from "./NHDHeader";
 import React, { useState } from "react";
 
 const NHDCard = (props) => {
-  const [inputData, setInputData] = useState([]);
+  const [cardData, setCardData] = useState([]);
 
-  const inputNameHandler = (checkboxData) => {
-    setInputData(checkboxData);
+  const onChange = (data) => {
+    setCardData(data);
   };
 
   return (
     <div className="new-day-card">
-      <NHDPopupMenu onChangeFormInputs={inputNameHandler} />
+      <NHDHeader onChange={onChange} />
       <NHDForm
-        formData={inputData}
-        onNewHairDayCancel={props.onCancelNewHairDay}
+        formData={cardData}
+        onClose={props.onClose}
       />
     </div>
   );

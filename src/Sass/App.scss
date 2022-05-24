@@ -2,10 +2,10 @@
 @use"./UI/UlStyles";
 @use "./components/NewHairDay/NewHairDay";
 @use "./components/NewHairDay/NHDCard";
-@use "./components/NewHairDay/PopupMenu/NHDPopupMenu.scss";
-@use "./components/NewHairDay/PopupMenu/NHDBurgerButton";
-@use "./components/NewHairDay/PopupMenu/NHDCheckboxForm";
-@use "./components/NewHairDay/PopupMenu/NHDCheckbox";
+@use "./components/NewHairDay/Header.scss";
+@use "./components/NewHairDay/Header/NHDBurgerButton";
+@use "./components/NewHairDay/Header/NHDOptionsForm";
+@use "./components/NewHairDay/Header/NHDCheckbox";
 @use "./components/NewHairDay/NHDForm";
 @use "./components/NewHairDay/NHDFormInput";
 @use "./components/NewHairDay/StarRating";

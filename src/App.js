@@ -4,10 +4,10 @@ import NewHairDay from "./Components/NewHairDay/NewHairDay";
 
 function App() {
   return (
-<>
-<Header/>
-<NewHairDay/>
-</>
+    <>
+      <Header/>
+      <NewHairDay/>
+    </>
   );
 }
 
