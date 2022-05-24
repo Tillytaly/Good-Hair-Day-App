@@ -13,7 +13,7 @@ const HAIR_DAY_OPTIONS = [
 
 const CheckboxForm = (props) => {
   const [checkboxDataList, setCheckboxDataList] = useState([]);
-  const [formState, setFormState] = useState(false);
+
 
   const removeCheckboxValue = (checkboxId) => {
     setCheckboxDataList((prevValues) => {
@@ -30,7 +30,7 @@ const CheckboxForm = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     props.onNewHairDayOptions(checkboxDataList);
-    setFormState(!formState);
+    props.newMenuState()
   };
 
   return (

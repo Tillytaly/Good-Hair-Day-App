@@ -4,20 +4,20 @@ import BurgerButton from "./BurgerButton";
 const PopupMenu = (props) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const menuStateHandler = (menuState) => {
-    return setMenuOpen(menuState);
+  const menuStateHandler = () => {
+   setMenuOpen(!menuOpen);
   };
 
   const checkboxDataHandler = (checkboxValues) => {
     props.onChangeFormInputs(checkboxValues)
-    setMenuOpen(false);
   };
 
   return (
     <div className="popup-menu">
-      <BurgerButton newMenuState={menuStateHandler} menuState={menuOpen}/>
+      <BurgerButton menuState={menuOpen}  newMenuState={menuStateHandler} />
       <CheckboxForm
         menuState={menuOpen}
+        newMenuState={menuStateHandler}
         onNewHairDayOptions={checkboxDataHandler}
       />
     </div>
