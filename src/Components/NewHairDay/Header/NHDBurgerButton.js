@@ -3,8 +3,8 @@ import React from "react";
 const NHDBurgerButton = (props) => {
   return (
     <div
-      className={`btn ${props.menuState ? "open" : ""}`}
-      onClick={props.newMenuState}
+      className={`btn ${props.isHeaderOpen ? "open" : ""}`}
+      onClick={props.onClick}
     >
       <div className="btn__burger"></div>
     </div>
