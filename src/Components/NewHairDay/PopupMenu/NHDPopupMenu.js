@@ -1,24 +1,21 @@
 import React, { useState } from "react";
-import CheckboxForm from "./NHDCheckboxForm";
+import NHDOptionsForm from "./NHDOptionsForm";
 import NHDBurgerButton from "./NHDBurgerButton";
 const NHDPopupMenu = (props) => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const menuStateHandler = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const checkboxDataHandler = (checkboxValues) => {
-    props.onChangeFormInputs(checkboxValues);
+  const toggle = () => {
+    setIsOpen(!isOpen);
+   
   };
 
   return (
     <div className="popup-menu">
-      <NHDBurgerButton menuState={menuOpen} newMenuState={menuStateHandler} />
-      <CheckboxForm
-        menuState={menuOpen}
-        newMenuState={menuStateHandler}
-        onNewHairDayOptions={checkboxDataHandler}
+      <NHDBurgerButton menuState={isOpen} newMenuState={toggle} />
+      <NHDOptionsForm
+        isMenuOpen={isOpen}
+        onSubmit={toggle}
+        onChange={props.onChange}
       />
     </div>
   );

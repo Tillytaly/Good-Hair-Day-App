@@ -1,19 +1,19 @@
-import StarRating from "./StarRating";
+import NHDStarRating from "./NHDStarRating";
 import NHDFormInput from "./NHDFormInput";
 import NHDFormFooter from "./NHDFormFooter";
 import React, { useState } from "react";
 const NHDForm = (props) => {
-  const [inputDataList, setInputDataList] = useState([]);
+  const [formData, setFormData] = useState([]);
   const [rating, setRating] = useState(0);
 
-  const inputDataHandler = (event) => {
+  const onFormDataChange = (event) => {
     const newInputData = {
       id: event.target.id,
       inputLabel: event.target.previousElementSibling.textContent,
       inputValue: event.target.value,
     };
 
-    setInputDataList((prevData) => {
+    setFormData((prevData) => {
       const previousInputDataIndex = prevData.findIndex(
         ({ id }) => id === event.target.id
       );
@@ -28,33 +28,32 @@ const NHDForm = (props) => {
     });
   };
 
-  const starRatingHandler = (newRating) => {
+  const onStarRatingClick = (newRating) => {
     setRating(newRating);
-    console.log(rating);
   };
 
-  const submitHandler = (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
   };
   return (
     <>
-      <form className="form" onSubmit={submitHandler}>
-        {props.formData.map((checkboxDataObj) => (
+      <form className="form" onSubmit={onSubmit}>
+        {props.formData.map((formDataItem) => (
           <NHDFormInput
-            inputLabel={checkboxDataObj.name}
-            key={checkboxDataObj.id}
-            inputType={checkboxDataObj.type}
-            id={checkboxDataObj.id}
-            onStateChange={inputDataHandler}
+            inputLabel={formDataItem.name}
+            key={formDataItem.id}
+            type={formDataItem.type}
+            id={formDataItem.id}
+            onChange={onFormDataChange}
           />
         ))}
-        <StarRating
-          onClickRating={starRatingHandler}
+        <NHDStarRating
+          onClickRating={onStarRatingClick}
           value={rating}
           starSize={50}
           readonly = {false}
         />
-        <NHDFormFooter onCancel={props.onNewHairDayCancel} />
+        <NHDFormFooter onClose={props.onClose} />
       </form>
     </>
   );

@@ -4,24 +4,23 @@ import UIButton from "../UI/UIButton";
 import NHDCard from "./NHDCard";
 
 const NewHairDay = () => {
-  const [isEditing, setIsEditing] = useState(false);
+  const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
 
-  const editingHandler = () => {
-    setIsEditing(!isEditing);
+  const toggleCreateModal = () => {
+    setIsCreateModalOpen(!isCreateModalOpen);
   };
 
   return (
     <UICard className="new-hair-day">
-      {!isEditing && (
-        <UIButton onClick={editingHandler} className="new-hair-day--btn">
+      {!isCreateModalOpen && (
+        <UIButton onClick={toggleCreateModal} className="new-hair-day--btn">
           Add New Hair Day
         </UIButton>
       )}
-      {isEditing && <NHDCard onCancelNewHairDay={editingHandler} />}
+      {isCreateModalOpen && <NHDCard onClose={toggleCreateModal} />}
     </UICard>
   );
 };
 
 export default NewHairDay;
 
-// onClick={startEditingHandler}>Add New Expense

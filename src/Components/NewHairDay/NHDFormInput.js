@@ -4,8 +4,8 @@ const NHDFormInput = (props) => {
     <div className="form--input-container">
       <label htmlFor={props.id}>{props.inputLabel}</label>
       <input
-        type={props.inputType}
-        onChange={props.onStateChange}
+        type={props.type}
+        onChange={props.onChange}
         id={props.id}
       ></input>
     </div>

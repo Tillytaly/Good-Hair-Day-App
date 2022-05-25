@@ -1,5 +1,5 @@
 import React from "react";
-const BurgerButton = (props) => {
+const NHDBurgerButton = (props) => {
   return (
     <div
       className={`btn ${props.menuState ? "open" : ""}`}
@@ -10,4 +10,4 @@ const BurgerButton = (props) => {
   );
 };
 
-export default BurgerButton;
+export default NHDBurgerButton;
