@@ -16,31 +16,31 @@ const HAIR_DAY_OPTIONS = [
   },
 ];
 
-const NHDCheckboxForm = (props) => {
-  const [checkboxDataList, setCheckboxDataList] = useState([]);
+const NHDOptionsForm = (props) => {
+  const [options, setOptions] = useState([]);
 
-  const removeCheckboxValue = (checkboxId) => {
-    setCheckboxDataList((prevValues) => {
+  const onCheckboxUnchecked = (checkboxId) => {
+    setOptions((prevValues) => {
       return prevValues.filter(({ id }) => id !== checkboxId);
     });
-  };
+  }
 
-  const addCheckboxValue = (checkboxData) => {
-    setCheckboxDataList((prevValues) => {
+  const onCheckboxChecked = (checkboxData) => {
+    setOptions((prevValues) => {
       return [checkboxData, ...prevValues];
     });
-  };
+  }
 
-  const submitHandler = (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
-    props.onNewHairDayOptions(checkboxDataList);
-    props.newMenuState();
+    props.onChange(options);
+    props.onSubmit();
   };
 
   return (
     <form
-      className={`checkbox-form ${props.menuState ? "open" : ""}`}
-      onSubmit={submitHandler}
+      className={`checkbox-form ${props.isHeaderOpen ? "open" : ""}`}
+      onSubmit={onSubmit}
     >
       <p className="checkbox-form--title">Hair Day Options</p>
       {HAIR_DAY_OPTIONS.map((option) => (
@@ -48,8 +48,8 @@ const NHDCheckboxForm = (props) => {
           name={option.name}
           key={option.id}
           id={option.id}
-          onAddValue={addCheckboxValue}
-          onRemoveValue={removeCheckboxValue}
+          onChecked={onCheckboxChecked}
+          onUnchecked={onCheckboxUnchecked}
         />
       ))}
       <UIButton
@@ -63,4 +63,4 @@ const NHDCheckboxForm = (props) => {
   );
 };
 
-export default NHDCheckboxForm;
+export default NHDOptionsForm;

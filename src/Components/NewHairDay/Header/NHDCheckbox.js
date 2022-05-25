@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 
 const NHDCheckbox = (props) => {
-  const [checkboxChecked, setCheckboxChecked] = useState(true);
+  const [isChecked, setIsChecked] = useState(true);
 
-  const checkboxClickHandler = (event) => {
+  const toggle = (event) => {
     const checkboxData = {
       name: event.target.value,
       id: event.target.id,
       type: event.target.value === "Date" ? "date" : "text",
     };
 
-    if (checkboxChecked) {
-      props.onAddValue(checkboxData);
+    if (isChecked) {
+      props.onChecked(checkboxData);
     } else {
-      props.onRemoveValue(event.target.id);
+      props.onUnchecked(event.target.id);
     }
-    setCheckboxChecked(!checkboxChecked);
+    setIsChecked(!isChecked);
   };
 
   return (
@@ -24,7 +24,7 @@ const NHDCheckbox = (props) => {
         type="checkbox"
         id={props.id}
         value={props.name}
-        onChange={checkboxClickHandler}
+        onChange={toggle}
       ></input>
       <label htmlFor={props.id}>{props.name}</label>
     </div>

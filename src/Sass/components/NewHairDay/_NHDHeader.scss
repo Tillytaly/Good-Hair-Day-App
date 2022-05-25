@@ -1,5 +1,5 @@
-@use "../../../abstracts/Mixins" as *;
-@use "../../../abstracts/Variables" as *;
+@use "../../abstracts/Mixins" as *;
+@use "../../abstracts/Variables" as *;
 
 @include breakpoint(375px) {
   .popup-menu {
