@@ -14,19 +14,23 @@ const NHDForm = (props) => {
     };
 
     setFormData((prevData) => {
+
       const previousInputDataIndex = prevData.findIndex(
         ({ id }) => id === event.target.id
       );
       const isInputDataAlreadyInList = previousInputDataIndex > -1;
 
       if (isInputDataAlreadyInList) {
-        const filteredData = prevData.splice(previousInputDataIndex, 1);
+        const filteredData = prevData.filter(({id}) => id !== newInputData.id)
         return [newInputData, ...filteredData];
       }
 
       return [newInputData, ...prevData];
     });
+
+    console.log(formData)
   };
+
 
   const onStarRatingClick = (newRating) => {
     setRating(newRating);
