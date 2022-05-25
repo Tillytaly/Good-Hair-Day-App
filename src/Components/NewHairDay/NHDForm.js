@@ -1,20 +1,19 @@
-import NHDStarRating from "./NHDStarRating";
+import StarRating from "./StarRating";
 import NHDFormInput from "./NHDFormInput";
 import NHDFormFooter from "./NHDFormFooter";
 import React, { useState } from "react";
-
 const NHDForm = (props) => {
-  const [formData, setFormData] = useState([]);
+  const [inputDataList, setInputDataList] = useState([]);
   const [rating, setRating] = useState(0);
 
-  const onFormDataChange = (event) => {
+  const inputDataHandler = (event) => {
     const newInputData = {
       id: event.target.id,
       inputLabel: event.target.previousElementSibling.textContent,
       inputValue: event.target.value,
     };
 
-    setFormData((prevData) => {
+    setInputDataList((prevData) => {
       const previousInputDataIndex = prevData.findIndex(
         ({ id }) => id === event.target.id
       );
@@ -29,33 +28,35 @@ const NHDForm = (props) => {
     });
   };
 
-  const onStarRatingClick = (rating) => {
-    setRating(rating);
+  const starRatingHandler = (newRating) => {
+    setRating(newRating);
+    console.log(rating);
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
   };
-
   return (
-    <form className="form" onSubmit={submitHandler}>
-      {props.formData.map((formDataItem) => (
-        <NHDFormInput
-          inputLabel={formDataItem.name}
-          key={formDataItem.id}
-          type={formDataItem.type}
-          id={formDataItem.id}
-          onChange={onFormDataChange}
+    <>
+      <form className="form" onSubmit={submitHandler}>
+        {props.formData.map((checkboxDataObj) => (
+          <NHDFormInput
+            inputLabel={checkboxDataObj.name}
+            key={checkboxDataObj.id}
+            inputType={checkboxDataObj.type}
+            id={checkboxDataObj.id}
+            onStateChange={inputDataHandler}
+          />
+        ))}
+        <StarRating
+          onClickRating={starRatingHandler}
+          value={rating}
+          starSize={50}
+          readonly = {false}
         />
-      ))}
-      <NHDStarRating
-        onClick={onStarRatingClick}
-        value={rating}
-        starSize={50}
-        readonly={false}
-      />
-      <NHDFormFooter onClose={props.onClose} />
-    </form>
+        <NHDFormFooter onCancel={props.onNewHairDayCancel} />
+      </form>
+    </>
   );
 };
 

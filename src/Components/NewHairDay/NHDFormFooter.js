@@ -6,7 +6,7 @@ const NHDFormFooter = (props) => {
       <UIButton
         className=" form-footer--button form-footer--button__cancel"
         type="button"
-        onClick={props.onClose}
+        onClick={props.onCancel}
       >
         Cancel
       </UIButton>

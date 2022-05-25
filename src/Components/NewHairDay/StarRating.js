@@ -1,12 +1,12 @@
 import React from "react";
 import { Rating } from "react-simple-star-rating";
 
-const NHDStarRating = (props) => {
+const StarRating = (props) => {
   return (
     <div className="star-rating">
       <p className="star-rating--paragraph">Rate Hair Day</p>
       <Rating
-        onClick={props.onClick}
+        onClick={props.onClickRating}
         ratingValue={props.value}
         allowHalfIcon={true}
         size={props.starSize}
@@ -15,4 +15,4 @@ const NHDStarRating = (props) => {
     </div>
   );
 };
-export default NHDStarRating;
+export default StarRating;
