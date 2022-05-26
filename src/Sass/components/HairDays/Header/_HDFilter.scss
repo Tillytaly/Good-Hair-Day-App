@@ -1,0 +1,24 @@
+@use "../../../abstracts/Variables" as *;
+@use "../../../abstracts/Mixins" as *;
+.filter--btn {
+  width: 6rem;
+  height: 6rem;
+  border: none;
+  border-radius: 50%;
+  @include fontWithShadow;
+  background-color: $lightGrey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
+
+  &:hover{
+      filter: brightness(1.2);
+  }
+
+  svg {
+    width: 3rem;
+    height: 3rem;
+    fill: $blue;
+  }
+}

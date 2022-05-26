@@ -11,3 +11,7 @@
 @use "./components/NewHairDay/StarRating";
 @use "./components/NewHairDay/NHDFormFooter";
 @use "./components/HairDays/HairDays";
+@use "./components/HairDays/HDHeader";
+@use "./components/HairDays/Header/HDFilter";
+@use "./components/HairDays/Header/FilterOptions";
+@use "./components/HairDays/Header/Collapsable";
