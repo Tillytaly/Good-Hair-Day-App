@@ -1,3 +1,5 @@
+@use '../../abstracts/Mixins' as *;
+
 .star-rating {
   height: 9.5rem;
   width: 90%;
@@ -9,12 +11,9 @@
   margin-top: 1rem;
 
   &--paragraph {
-    color: black;
-    font-size: 1.8rem;
+    @include fontWithShadow;
+    font-size: 1.9rem;
     margin: 0 auto;
-    color: white;
-    text-shadow: 0 0 0.5rem black;
-    font-weight: 700;
     margin-bottom: 0.5rem;
     text-align: center;
   }

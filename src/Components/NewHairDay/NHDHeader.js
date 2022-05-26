@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import NHDOptionsForm from "./NHDOptionsForm";
-import NHDBurgerButton from "./NHDBurgerButton";
-const NHDPopupMenu = (props) => {
+import NHDOptionsForm from "./Header/NHDOptionsForm";
+import NHDBurgerButton from "./Header/NHDBurgerButton";
+const NHDHeader = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => {
     setIsOpen(!isOpen);
-   
   };
-
+  
   return (
     <div className="popup-menu">
       <NHDBurgerButton menuState={isOpen} newMenuState={toggle} />
@@ -21,4 +20,4 @@ const NHDPopupMenu = (props) => {
   );
 };
 
-export default NHDPopupMenu;
+export default NHDHeader;

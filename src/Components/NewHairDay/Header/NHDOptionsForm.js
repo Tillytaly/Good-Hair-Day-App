@@ -4,13 +4,13 @@ import { v4 as uuidv4 } from "uuid";
 import React, { useState } from "react";
 
 const HAIR_DAY_OPTIONS = [
-  { value: "OMO", id: uuidv4() },
-  { value: "Heat Protector", id: uuidv4() },
-  { value: "PEH", id: uuidv4() },
-  { value: "Serum", id: uuidv4() },
-  { value: "Hair Oil", id: uuidv4() },
+  { name: "OMO", id: uuidv4() },
+  { name: "Heat Protector", id: uuidv4() },
+  { name: "PEH", id: uuidv4() },
+  { name: "Serum", id: uuidv4() },
+  { name: "Hair Oil", id: uuidv4() },
   {
-    value: "Date",
+    name: "Date",
     id: uuidv4(),
     title: "If not chosen today's date is default.",
   },
@@ -21,9 +21,9 @@ const NHDOptionsForm = (props) => {
 
   const toggle = (event) => {
     const checkboxData = {
-      name: event.target.value,
+      name: event.target.name,
       id: event.target.id,
-      type: event.target.value === "Date" ? "date" : "text",
+      type: event.target.name === "Date" ? "date" : "text",
     };
 
     const indexOfCheckboxInList = options.findIndex(
@@ -58,14 +58,14 @@ const NHDOptionsForm = (props) => {
 
   return (
     <form
-    //props menuState -> isMenuOpen
+
       className={`checkbox-form ${props.isMenuOpen ? "open" : ""}`}
       onSubmit={onSubmit}
     >
       <p className="checkbox-form--title">Hair Day Options</p>
       {HAIR_DAY_OPTIONS.map((option) => (
         <NHDCheckbox
-          value={option.value}
+          name={option.name}
           key={option.id}
           id={option.id}
           onChange={toggle}

@@ -6,10 +6,10 @@ const NHDCheckbox = (props) => {
       <input
         type="checkbox"
         id={props.id}
-        value={props.value}
+        name={props.name}
         onChange={props.onChange}
       ></input>
-      <label htmlFor={props.id}>{props.value}</label>
+      <label htmlFor={props.id}>{props.name}</label>
     </div>
   );
 };

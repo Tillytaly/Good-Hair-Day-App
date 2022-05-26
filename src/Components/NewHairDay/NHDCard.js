@@ -1,5 +1,5 @@
 import NHDForm from "./NHDForm";
-import NHDPopupMenu from "./PopupMenu/NHDPopupMenu";
+import NHDHeader from "./NHDHeader";
 import React, { useState } from "react";
 
 const NHDCard = (props) => {
@@ -11,7 +11,7 @@ const NHDCard = (props) => {
 
   return (
     <div className="new-day-card">
-      <NHDPopupMenu onChange={onChange} />
+      <NHDHeader onChange={onChange} />
       <NHDForm
         formData={cardData}
         onClose={props.onClose}

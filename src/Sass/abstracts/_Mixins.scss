@@ -4,7 +4,7 @@
   }
 }
 
-@mixin cardColors($backgroundColor, $borderColor) {
+@mixin backgroundAndBorderColors($backgroundColor, $borderColor) {
   background-color: $backgroundColor;
   border-color: $borderColor;
 }
@@ -14,3 +14,9 @@
     transition: $transitionTime;
 }
 
+@mixin fontWithShadow{
+  color: white;
+  letter-spacing: 0.2rem;
+  font-weight: 800;
+  text-shadow: 0 0 0.5rem black;
+}

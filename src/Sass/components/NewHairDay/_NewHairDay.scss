@@ -3,8 +3,8 @@
 
 @include breakpoint(375px){
 .new-hair-day {
-  @include cardColors($lightestPink, $darkerPink);
-  margin: 10% auto;
+  @include backgroundAndBorderColors($lightestPink, $darkerPink);
+  margin: 10% auto 0;
 min-height:9rem;
   max-width: 70rem;
   padding: 1rem;
@@ -15,7 +15,7 @@ min-height:9rem;
   &--btn{
     font-size: 1.7rem;
     padding: 1rem 2rem;
-    @include cardColors($darkerPink, $darkerPink);
+    @include backgroundAndBorderColors($darkerPink, $darkerPink);
     font-weight: 800;
     text-shadow: 0 0 0.5rem black;
     color: white;
@@ -26,7 +26,7 @@ min-height:9rem;
 
 }
 
-@include breakpoint(810px) {
+@include breakpoint(768px) {
     .new-hair-day {
       min-width: 55rem;
 
