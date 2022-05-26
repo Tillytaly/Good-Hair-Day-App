@@ -1,10 +1,19 @@
 @use "../../abstracts/Mixins" as *;
 @use "../../abstracts/Variables" as *;
 
+
+@include breakpoint(375px) {
 .hair-days-card {
   @include backgroundAndBorderColors($greyishBlue, $blue);
-  margin: 1% auto 0;
+  margin: 2% auto 0;
   min-height: 9rem;
-  max-width: 70rem;
-  padding: 1rem;
+  max-width: 95%;
+  padding: 2rem;
+}
+}
+
+@include breakpoint(768px) {
+  .hair-days-card {
+  max-width: 80rem;
+  }
 }
