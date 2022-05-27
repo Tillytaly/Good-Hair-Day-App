@@ -7,6 +7,7 @@
     padding: 1rem;
     @include backgroundAndBorderColors($blue, $blue);
     border-radius: 1.5rem;
+    position: relative;
     display: flex;
     justify-content: flex-end;
     align-items: center;

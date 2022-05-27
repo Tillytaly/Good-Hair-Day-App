@@ -1,0 +1,65 @@
+@use "../abstracts/Mixins" as *;
+
+@include breakpoint(375px) {
+  .UI-checkbox-container {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    border-bottom: 0.2rem solid rgb(243, 239, 239);
+  }
+
+  .UI-checkbox-container label {
+    font-size: 1.8em;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    display: flex;
+  }
+
+  .UI-checkbox-container input {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+  }
+
+  .UI-checkbox-container label::before {
+    content: "";
+    width: 1em;
+    height: 1em;
+    border: 0.05em solid black;
+    margin-right: 1rem;
+  }
+
+  .UI-checkbox-container label:hover::before,
+  .UI-checkbox-container input:hover + label::before {
+    transition-duration: 0.9s;
+  }
+
+  .UI-checkbox-container input:checked + label::before {
+    content: "\002714";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    transition-duration: 0s;
+  }
+
+  .UI-checkbox-container input:checked + label {
+    font-weight: 500;
+  }
+}
+
+@include breakpoint(810px) {
+  .UI-checkbox-container {
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .UI-checkbox-container label {
+    display: flex;
+    justify-content: space-between;
+    min-width: 80%;
+  }
+}
