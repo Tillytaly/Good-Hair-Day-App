@@ -467,6 +467,7 @@ ul {
   flex-direction: column;
   align-items: center;
   margin-top: 0.5rem;
+  padding: 0.5rem;
 }
 .collapsable--btn {
   border: none;
@@ -479,22 +480,31 @@ ul {
   font-weight: 700;
   letter-spacing: 0.1rem;
 }
-.collapsable--list {
-  background-color: #EFEFEF;
+
+.options-list {
+  background-color: white;
   width: 95%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  padding: 1rem;
+  display: block;
 }
-.collapsable--list li {
-  padding-top: 1rem;
-  width: 95%;
-  font-size: 1.7rem;
-  font-weight: 500;
+.options-list--item {
+  width: 100%;
   margin-bottom: 1rem;
-  border-bottom: solid 0.1rem #f8f3f3;
-  text-align: center;
+  display: block;
+  line-height: 3.5rem;
+}
+
+.HD-checkbox-container {
+  width: 100%;
+  justify-content: space-around;
+}
+
+.HD-checkbox-container label::before {
+  border-color: white;
+}
+
+.HD-checkbox-container input:checked + label::before {
+  color: black;
 }
 
 /*# sourceMappingURL=App.css.map */
