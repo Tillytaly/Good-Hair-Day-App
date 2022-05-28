@@ -1,5 +1,5 @@
-import UICheckbox from ".././../UI/UICheckbox";
-import HDsCollapsable from "./HDsCollapsable";
+import Months from "./Months";
+import Years from "./Years";
 import { v4 as uuidv4 } from "uuid";
 import React, { useState } from "react";
 const idOfDefaultCheck = uuidv4();
@@ -29,7 +29,7 @@ const FilterOptions = () => {
   const [idOfCheckedYear, setIdOfCheckedYear] = useState(idOfDefaultCheck);
   const [idOfCheckedMonth, setIdOfCheckedMonth] = useState("");
 
-  const onYearCheckboxChange = (event) => {
+  const onYearChange = (event) => {
     setFilterOptions((prevOptions) => {
       const newYearState = { ...prevOptions };
 
@@ -39,20 +39,17 @@ const FilterOptions = () => {
       }
       return newYearState;
     });
-
     setIdOfCheckedYear(event.target.id);
   };
 
-  const onMonthCheckboxChange = (event) => {
+  const onMonthChange = (event) => {
     setFilterOptions((prevOptions) => {
       const newMonthState = { ...prevOptions };
 
       if (idOfCheckedMonth.length > 0) {
         newMonthState.months[idOfCheckedMonth].checked = false;
       }
-    
       newMonthState.months[event.target.id].checked = event.target.checked;
-
       return newMonthState;
     });
     setIdOfCheckedMonth(event.target.id);
@@ -60,30 +57,8 @@ const FilterOptions = () => {
 
   return (
     <div className="filter-options">
-      <HDsCollapsable name="Year">
-        {Object.keys(filterOptions.years).map((id) => (
-          <UICheckbox
-            key={id}
-            id={id}
-            name={filterOptions.years[id].name}
-            checked={filterOptions.years[id].checked}
-            className="HDs-checkbox-container"
-            onChange={onYearCheckboxChange}
-          />
-        ))}
-      </HDsCollapsable>
-      <HDsCollapsable name="Month">
-        {Object.keys(filterOptions.months).map((id) => (
-          <UICheckbox
-            key={id}
-            id={id}
-            name={filterOptions.months[id].name}
-            checked={filterOptions.months[id].checked}
-            className="HDs-checkbox-container"
-            onChange={onMonthCheckboxChange}
-          />
-        ))}
-      </HDsCollapsable>
+      <Years filterOptions={filterOptions} onChange={onYearChange}/>
+      <Months filterOptions={filterOptions} onChange={onMonthChange}/>
     </div>
   );
 };
