@@ -3,7 +3,7 @@ const HDsOptionsList = (props) => {
     <>
       <ul className="options-list">
         {props.children.map((child) => (
-          <ul className="options-list--item">{child}</ul>
+          <li key = {child.key} className="options-list--item">{child}</li>
         ))}
       </ul>
     </>

@@ -459,6 +459,7 @@ ul {
   border: solid 0.1rem #BFCDF0;
   border-radius: 0.5rem;
   position: absolute;
+  padding: 0.8rem;
 }
 
 .collapsable {
@@ -466,19 +467,27 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 0.5rem;
-  padding: 0.5rem;
+  max-height: 16rem;
+  overflow: auto;
+  padding-bottom: 0.2rem;
+}
+.collapsable::-webkit-scrollbar {
+  width: 0.1rem;
+  /* Mostly for vertical scrollbars */
+  /* Mostly for horizontal scrollbars */
 }
 .collapsable--btn {
   border: none;
   width: 95%;
-  height: 4rem;
+  min-height: 4.5rem;
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 0.5;
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 0.1rem;
+  position: sticky;
+  top: 0;
 }
 
 .options-list {
@@ -494,16 +503,16 @@ ul {
   line-height: 3.5rem;
 }
 
-.HD-checkbox-container {
+.HDs-checkbox-container {
   width: 100%;
   justify-content: space-around;
 }
 
-.HD-checkbox-container label::before {
+.HDs-checkbox-container label::before {
   border-color: white;
 }
 
-.HD-checkbox-container input:checked + label::before {
+.HDs-checkbox-container input:checked + label::before {
   color: black;
 }
 
