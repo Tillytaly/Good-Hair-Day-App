@@ -7,6 +7,7 @@ const UICheckbox = (props) => {
           name={props.name}
           onChange={props.onChange}
           checked={props.checked && 'checked'}
+          value={props.value}
         ></input>
         <label htmlFor={props.id}>{props.name}</label>
       </div>

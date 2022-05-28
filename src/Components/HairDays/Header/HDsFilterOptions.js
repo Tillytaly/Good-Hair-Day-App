@@ -1,30 +1,30 @@
-import Months from "./Months";
-import Years from "./Years";
+import HDsMonths from "./HDsMonths";
+import HDsYears from "./HDsYears";
 import { v4 as uuidv4 } from "uuid";
 import React, { useState } from "react";
 const idOfDefaultCheck = uuidv4();
 const defaultFilterOptions = {
   years: {
-    [idOfDefaultCheck]: { name: 2022, checked: true },
-    [uuidv4()]: { name: 2021, checked: false },
+    [idOfDefaultCheck]: { name: 2022, value: 2022, checked: true },
+    [uuidv4()]: { name: 2021, value: 2021, checked: false },
   },
   months: {
-    [uuidv4()]: { name: "January", checked: false },
-    [uuidv4()]: { name: "February", checked: false },
-    [uuidv4()]: { name: "March", checked: false },
-    [uuidv4()]: { name: "April", checked: false },
-    [uuidv4()]: { name: "May", checked: false },
-    [uuidv4()]: { name: "June", checked: false },
-    [uuidv4()]: { name: "July", checked: false },
-    [uuidv4()]: { name: "August", checked: false },
-    [uuidv4()]: { name: "September", checked: false },
-    [uuidv4()]: { name: "October", checked: false },
-    [uuidv4()]: { name: "November", checked: false },
-    [uuidv4()]: { name: "December", checked: false },
+    [uuidv4()]: { name: "January", value: 0, checked: false },
+    [uuidv4()]: { name: "February", value: 1, checked: false },
+    [uuidv4()]: { name: "March", value: 2, checked: false },
+    [uuidv4()]: { name: "April", value: 3, checked: false },
+    [uuidv4()]: { name: "May", value: 4, checked: false },
+    [uuidv4()]: { name: "June", value: 5, checked: false },
+    [uuidv4()]: { name: "July", value: 6, checked: false },
+    [uuidv4()]: { name: "August", value: 7, checked: false },
+    [uuidv4()]: { name: "September", value: 8, checked: false },
+    [uuidv4()]: { name: "October", value: 9, checked: false },
+    [uuidv4()]: { name: "November", value: 10, checked: false },
+    [uuidv4()]: { name: "December", value: 11, checked: false },
   },
 };
 
-const FilterOptions = () => {
+const HDsFilterOptions = () => {
   const [filterOptions, setFilterOptions] = useState(defaultFilterOptions);
   const [idOfCheckedYear, setIdOfCheckedYear] = useState(idOfDefaultCheck);
   const [idOfCheckedMonth, setIdOfCheckedMonth] = useState("");
@@ -57,9 +57,9 @@ const FilterOptions = () => {
 
   return (
     <div className="filter-options">
-      <Years filterOptions={filterOptions} onChange={onYearChange}/>
-      <Months filterOptions={filterOptions} onChange={onMonthChange}/>
+      <HDsYears filterOptions={filterOptions} onChange={onYearChange} />
+      <HDsMonths filterOptions={filterOptions} onChange={onMonthChange} />
     </div>
   );
 };
-export default FilterOptions;
+export default HDsFilterOptions;

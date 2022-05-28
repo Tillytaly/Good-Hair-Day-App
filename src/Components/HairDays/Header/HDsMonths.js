@@ -1,7 +1,7 @@
 import HDsCollapsable from "./HDsCollapsable";
 import UICheckbox from "../../UI/UICheckbox";
 
-const Months = (props) => {
+const HDsMonths = (props) => {
   return (
     <HDsCollapsable name="Month">
       {Object.keys(props.filterOptions.months).map((id) => (
@@ -18,4 +18,4 @@ const Months = (props) => {
   );
 };
 
-export default Months;
+export default HDsMonths;
