@@ -12,7 +12,9 @@
 @use "./components/NewHairDay/StarRating";
 @use "./components/NewHairDay/NHDFormFooter";
 @use "./components/HairDays/HairDays";
-@use "./components/HairDays/HDHeader";
-@use "./components/HairDays/Header/HDFilter";
-@use "./components/HairDays/Header/FilterOptions";
-@use "./components/HairDays/Header/Collapsable";
+@use "./components/HairDays/HDsHeader";
+@use "./components/HairDays/Header/HDsFilterBtn";
+@use "./components/HairDays/Header/HDsFilterOptions";
+@use "./components/HairDays/Header/HDsCollapsable";
+@use "./components/HairDays/Header/HDsCheckbox";
+@use "./components/HairDays/HDsOptionsList";

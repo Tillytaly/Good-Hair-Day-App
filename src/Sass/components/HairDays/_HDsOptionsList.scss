@@ -1,0 +1,17 @@
+@use "../../abstracts/Mixins" as *;
+
+@include breakpoint(375px) {
+  .options-list {
+    background-color: white;
+    width: 95%;
+    padding: 1rem;
+    display: block;
+
+    &--item {
+      width: 100%;
+      margin-bottom: 1rem;
+      display: block;
+      line-height: 3.5rem;
+    }
+  }
+}

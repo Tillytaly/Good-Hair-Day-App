@@ -1,9 +1,11 @@
 const HDsOptionsList = (props) => {
   return (
     <>
-      <ul className="options-list">
+      <ul className={`options-list ${props.className}`}>
         {props.children.map((child) => (
-          <li key = {child.key} className="options-list--item">{child}</li>
+          <li key={child.key} className="options-list--item">
+            {child}
+          </li>
         ))}
       </ul>
     </>

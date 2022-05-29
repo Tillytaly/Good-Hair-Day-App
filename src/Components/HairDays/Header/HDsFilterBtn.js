@@ -1,4 +1,4 @@
-const HDsFilter = (props) => {
+const HDsFilterBtn = (props) => {
   return (
     <button className="filter--btn" onClick={props.onClick}>
      {props.icon}
@@ -6,4 +6,4 @@ const HDsFilter = (props) => {
   );
 };
 
-export default HDsFilter;
+export default HDsFilterBtn;
