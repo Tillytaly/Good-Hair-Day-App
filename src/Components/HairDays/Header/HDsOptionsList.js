@@ -1,4 +1,4 @@
-const HDsOptionsList = (props) => {
+const HDSOptionsList = (props) => {
   return (
     <>
       <ul className={`options-list ${props.className}`}>
@@ -12,4 +12,4 @@ const HDsOptionsList = (props) => {
   );
 };
 
-export default HDsOptionsList;
+export default HDSOptionsList;

@@ -1,7 +1,8 @@
-import HDsMonths from "./HDsMonths";
-import HDsYears from "./HDsYears";
+import HDSMonths from "./HDSMonths";
+import HDSYears from "./HDSYears";
 import { v4 as uuidv4 } from "uuid";
 import React, { useState } from "react";
+
 const idOfDefaultCheck = uuidv4();
 const defaultFilterOptions = {
   years: {
@@ -24,18 +25,18 @@ const defaultFilterOptions = {
   },
 };
 
-const HDsFilterOptions = () => {
+const HDSFilterOptions = () => {
   const [filterOptions, setFilterOptions] = useState(defaultFilterOptions);
   const [idOfCheckedYear, setIdOfCheckedYear] = useState(idOfDefaultCheck);
   const [idOfCheckedMonth, setIdOfCheckedMonth] = useState("");
 
   const onYearChange = (event) => {
-    setFilterOptions((prevOptions) => {
-      const newYearState = { ...prevOptions };
+    setFilterOptions((prevFilterOptions) => {
+      const newYearState = { ...prevFilterOptions };
 
       if (idOfCheckedYear !== event.target.id) {
-        newYearState.years[idOfCheckedYear].checked = !event.target.checked;
-        newYearState.years[event.target.id].checked = event.target.checked;
+        newYearState.years[idOfCheckedYear].checked = false;
+        newYearState.years[event.target.id].checked = true;
       }
       return newYearState;
     });
@@ -43,8 +44,8 @@ const HDsFilterOptions = () => {
   };
 
   const onMonthChange = (event) => {
-    setFilterOptions((prevOptions) => {
-      const newMonthState = { ...prevOptions };
+    setFilterOptions((prevFilterOptions) => {
+      const newMonthState = { ...prevFilterOptions };
 
       if (idOfCheckedMonth.length > 0) {
         newMonthState.months[idOfCheckedMonth].checked = false;
@@ -57,9 +58,9 @@ const HDsFilterOptions = () => {
 
   return (
     <div className="filter-options">
-      <HDsYears filterOptions={filterOptions} onChange={onYearChange} />
-      <HDsMonths filterOptions={filterOptions} onChange={onMonthChange} />
+      <HDSYears filterOptions={filterOptions} onChange={onYearChange} />
+      <HDSMonths filterOptions={filterOptions} onChange={onMonthChange} />
     </div>
   );
 };
-export default HDsFilterOptions;
+export default HDSFilterOptions;

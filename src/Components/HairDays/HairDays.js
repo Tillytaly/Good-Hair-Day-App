@@ -1,10 +1,10 @@
 import UICard from "../UI/UICard";
-import HDsHeader from "./HDsHeader";
+import HDSHeader from "./HDSHeader";
 
 const HairDays = (props) => {
   return (
     <UICard className="hair-days-card">
-      <HDsHeader />
+      <HDSHeader />
     </UICard>
   );
 };

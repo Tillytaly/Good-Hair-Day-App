@@ -1,9 +1,9 @@
-import HDsCollapsable from "./HDsCollapsable";
+import HDSCollapsable from "./HDSCollapsable";
 import UICheckbox from "../../UI/UICheckbox";
 
-const HDsYears = (props) => {
+const HDSYears = (props) => {
   return (
-    <HDsCollapsable name="Year">
+    <HDSCollapsable name="Year">
       {Object.keys(props.filterOptions.years).map((id) => (
         <UICheckbox
         key={id}
@@ -15,8 +15,8 @@ const HDsYears = (props) => {
           onChange={props.onChange}
         />
       ))}
-    </HDsCollapsable>
+    </HDSCollapsable>
   );
 };
 
-export default HDsYears;
+export default HDSYears;

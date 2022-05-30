@@ -1,8 +1,8 @@
-import HDsFilterBtn from "./Header/HDsFilterBtn";
+import HDSFilterBtn from "./Header/HDSFilterBtn";
 import { ReactComponent as FilterSVG } from "../../Icons/filter.svg";
 import React, { useState } from "react";
-import HDsFilterOptions from "./Header/HDsFilterOptions";
-const HDsHeader = (props) => {
+import HDSFilterOptions from "./Header/HDSFilterOptions";
+const HDSHeader = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleFilterBtn = () => {
@@ -11,10 +11,10 @@ const HDsHeader = (props) => {
 
   return (
     <div className="HD-Header">
-      <HDsFilterBtn icon={<FilterSVG />} onClick={toggleFilterBtn} />
-      {isOpen && <HDsFilterOptions />}
+      <HDSFilterBtn icon={<FilterSVG />} onClick={toggleFilterBtn} />
+      {isOpen && <HDSFilterOptions />}
     </div>
   );
 };
 
-export default HDsHeader;
+export default HDSHeader;

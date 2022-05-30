@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import HDsOptionsList from "./HDsOptionsList";
-const HDsCollapsable = (props) => {
+import HDSOptionsList from "./HDSOptionsList";
+const HDSCollapsable = (props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleCollapsable = () => {
@@ -11,9 +11,9 @@ const HDsCollapsable = (props) => {
       <button onClick={toggleCollapsable} className="collapsable--btn">
         {props.name}
       </button>
-      {isOpen && <HDsOptionsList>{props.children}</HDsOptionsList>}
+      {isOpen && <HDSOptionsList>{props.children}</HDSOptionsList>}
     </div>
   );
 };
 
-export default HDsCollapsable;
+export default HDSCollapsable;
