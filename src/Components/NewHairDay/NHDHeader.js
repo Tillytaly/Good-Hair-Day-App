@@ -7,7 +7,7 @@ const NHDHeader = (props) => {
   const toggle = () => {
     setIsOpen(!isOpen);
   };
-  
+
   return (
     <div className="popup-menu">
       <NHDBurgerButton menuState={isOpen} newMenuState={toggle} />

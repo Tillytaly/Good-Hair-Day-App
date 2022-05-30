@@ -1,0 +1,16 @@
+@use "../../../abstracts/Mixins" as *;
+
+@include breakpoint(375px) {
+  .HDs-checkbox-container {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .HDs-checkbox-container label::before {
+    border-color: white;
+  }
+
+  .HDs-checkbox-container input:checked + label::before {
+    color: black;
+  }
+}

@@ -1,5 +1,6 @@
 @use "./base/CSSReset";
 @use"./UI/UlStyles";
+@use "./UI/UICheckbox";
 @use "./components/NewHairDay/NewHairDay";
 @use "./components/NewHairDay/NHDCard";
 @use "./components/NewHairDay/PopupMenu/NHDPopupMenu.scss";
@@ -11,3 +12,9 @@
 @use "./components/NewHairDay/StarRating";
 @use "./components/NewHairDay/NHDFormFooter";
 @use "./components/HairDays/HairDays";
+@use "./components/HairDays/HDsHeader";
+@use "./components/HairDays/Header/HDsFilterBtn";
+@use "./components/HairDays/Header/HDsFilterOptions";
+@use "./components/HairDays/Header/HDsCollapsable";
+@use "./components/HairDays/Header/HDsCheckbox";
+@use "./components/HairDays/HDsOptionsList";

@@ -1,0 +1,13 @@
+@use '../../../abstracts/Variables' as *;
+.filter-options{
+    width: 22rem;
+    position:relative;
+    background-color: white;
+    top:7.5rem;
+    background-color: $blue;
+    border: solid 0.1rem $lightBlue;
+    border-radius:0.5rem;
+    position: absolute;
+    padding: 0.8rem;
+ 
+}

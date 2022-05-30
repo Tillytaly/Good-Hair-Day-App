@@ -1,5 +1,5 @@
-import NHDCheckbox from "./NHDCheckbox";
 import UIButton from "../../UI/UIButton";
+import UICheckbox from "../../UI/UICheckbox";
 import { v4 as uuidv4 } from "uuid";
 import React, { useState } from "react";
 
@@ -64,7 +64,8 @@ const NHDOptionsForm = (props) => {
     >
       <p className="checkbox-form--title">Hair Day Options</p>
       {HAIR_DAY_OPTIONS.map((option) => (
-        <NHDCheckbox
+        <UICheckbox
+          className = "NHD-checkbox-container"
           name={option.name}
           key={option.id}
           id={option.id}
